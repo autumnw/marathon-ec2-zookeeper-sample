@@ -7,7 +7,7 @@ node {
   	stage 'Upload'
   	dcBuild.push()
   	stage 'Publish to dev ENV'
-  	docker.image('artifactory.adskengineer.net/ors-utils:v3').inside {
+  	docker.image('artifactory.adskengineer.net/ors-utils:v4').inside {
   		sh "cicd-cli publish -m ./appVersionManifest.yml"
   	}
 }
