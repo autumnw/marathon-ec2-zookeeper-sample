@@ -1,0 +1,7 @@
+components:
+- deployment_platform: mesos
+  manifest: dcos.json
+  name: zookeeper-ochopod-example 
+  version: 1
+name: zookeeper-ochopod-example
+version: 1
