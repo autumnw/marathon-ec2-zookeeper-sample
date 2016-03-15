@@ -7,7 +7,7 @@ node {
   	stage 'Push docker image'
   	dcBuild.push()
   	stage 'Deploy to dev ENV and publish'
-  	docker.image('artifactory.adskengineer.net/ors-utils:v7').inside {
+  	docker.image('artifactory.adskengineer.net/ors-utils:v8').inside {
 		sh "cicd-cli publish -m ./appVersionManifest.yml"
 		sh "cicd-cli deploy -e Dev -r us_east -p mesos -a zookeeper-ochopod-example -v 1"
 		sh "cicd-cli notify -e Dev -n zookeeper-ochopod-example -v 1"
